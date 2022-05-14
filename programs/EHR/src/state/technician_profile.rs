@@ -23,7 +23,6 @@ const MAX_TECHNICIAN_SEX_LENGTH: usize = 16;
 const MAX_TECHNICIAN_DOB_LENGTH: usize = 16;
 const MAX_BOOLSIZE: usize = 1;
 const MAX_SIZE_IU32: usize = 4;
-const MAX_SIZE_IU128: usize = 16;
 const MAX_SIZE_IU64: usize = 8; //sign_up_date
 const BUMP_LENGTH: usize = 1;
 const TECHNICIANPROFILE_RESERVED_SIZE: usize = 6;
@@ -33,9 +32,9 @@ impl TechnicianProfile{
                         + STRING_LENGTH_PREFIX + MAX_TECHNICIAN_NAME_LENGTH
                         + STRING_LENGTH_PREFIX + MAX_TECHNICIAN_SEX_LENGTH
                         + STRING_LENGTH_PREFIX + MAX_TECHNICIAN_DOB_LENGTH
-                        + MAX_BOOLSIZE
                         + MAX_SIZE_IU32
-                        + 2* MAX_SIZE_IU64
+                        + 3* MAX_SIZE_IU64
+                        + MAX_BOOLSIZE
                         + BUMP_LENGTH
                         + TECHNICIANPROFILE_RESERVED_SIZE;
 }

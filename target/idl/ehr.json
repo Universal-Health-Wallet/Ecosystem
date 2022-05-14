@@ -258,6 +258,10 @@
         {
           "name": "technicianComments",
           "type": "string"
+        },
+        {
+          "name": "bloodtestReportIpfsHash",
+          "type": "string"
         }
       ]
     },
@@ -295,6 +299,10 @@
         },
         {
           "name": "doctorComments",
+          "type": "string"
+        },
+        {
+          "name": "gcReportIpfsHash",
           "type": "string"
         }
       ]
@@ -398,6 +406,10 @@
             "type": "i64"
           },
           {
+            "name": "uhwDaoShare",
+            "type": "u16"
+          },
+          {
             "name": "redBloodCells",
             "type": "u128"
           },
@@ -414,6 +426,10 @@
             "type": "string"
           },
           {
+            "name": "bloodtestReportIpfsHash",
+            "type": "string"
+          },
+          {
             "name": "patientVerified",
             "type": "bool"
           },
@@ -426,7 +442,7 @@
             "type": {
               "array": [
                 "u8",
-                6
+                4
               ]
             }
           }
@@ -533,6 +549,10 @@
           },
           {
             "name": "doctorComments",
+            "type": "string"
+          },
+          {
+            "name": "gcReportIpfsHash",
             "type": "string"
           },
           {

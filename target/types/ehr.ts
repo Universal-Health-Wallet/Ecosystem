@@ -258,6 +258,10 @@ export type Ehr = {
         {
           "name": "technicianComments",
           "type": "string"
+        },
+        {
+          "name": "bloodtestReportIpfsHash",
+          "type": "string"
         }
       ]
     },
@@ -295,6 +299,10 @@ export type Ehr = {
         },
         {
           "name": "doctorComments",
+          "type": "string"
+        },
+        {
+          "name": "gcReportIpfsHash",
           "type": "string"
         }
       ]
@@ -398,6 +406,10 @@ export type Ehr = {
             "type": "i64"
           },
           {
+            "name": "uhwDaoShare",
+            "type": "u16"
+          },
+          {
             "name": "redBloodCells",
             "type": "u128"
           },
@@ -414,6 +426,10 @@ export type Ehr = {
             "type": "string"
           },
           {
+            "name": "bloodtestReportIpfsHash",
+            "type": "string"
+          },
+          {
             "name": "patientVerified",
             "type": "bool"
           },
@@ -426,7 +442,7 @@ export type Ehr = {
             "type": {
               "array": [
                 "u8",
-                6
+                4
               ]
             }
           }
@@ -533,6 +549,10 @@ export type Ehr = {
           },
           {
             "name": "doctorComments",
+            "type": "string"
+          },
+          {
+            "name": "gcReportIpfsHash",
             "type": "string"
           },
           {
@@ -946,6 +966,10 @@ export const IDL: Ehr = {
         {
           "name": "technicianComments",
           "type": "string"
+        },
+        {
+          "name": "bloodtestReportIpfsHash",
+          "type": "string"
         }
       ]
     },
@@ -983,6 +1007,10 @@ export const IDL: Ehr = {
         },
         {
           "name": "doctorComments",
+          "type": "string"
+        },
+        {
+          "name": "gcReportIpfsHash",
           "type": "string"
         }
       ]
@@ -1086,6 +1114,10 @@ export const IDL: Ehr = {
             "type": "i64"
           },
           {
+            "name": "uhwDaoShare",
+            "type": "u16"
+          },
+          {
             "name": "redBloodCells",
             "type": "u128"
           },
@@ -1102,6 +1134,10 @@ export const IDL: Ehr = {
             "type": "string"
           },
           {
+            "name": "bloodtestReportIpfsHash",
+            "type": "string"
+          },
+          {
             "name": "patientVerified",
             "type": "bool"
           },
@@ -1114,7 +1150,7 @@ export const IDL: Ehr = {
             "type": {
               "array": [
                 "u8",
-                6
+                4
               ]
             }
           }
@@ -1221,6 +1257,10 @@ export const IDL: Ehr = {
           },
           {
             "name": "doctorComments",
+            "type": "string"
+          },
+          {
+            "name": "gcReportIpfsHash",
             "type": "string"
           },
           {
