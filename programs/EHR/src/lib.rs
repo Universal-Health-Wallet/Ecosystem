@@ -11,7 +11,7 @@ pub mod error;
 pub mod ehr {
     use super::*;
 
-    pub fn init_patient_ehr(ctx: Context<InitPatientEhr>, name: String, sex: String, dob: String) -> Result<()> {
-       instructions::init_patient_ehr::handler(ctx, name, sex, dob)
+    pub fn init_patient_profile(ctx: Context<InitPatientProfile>, name: String, sex: String, dob: String) -> Result<()> {
+       instructions::init_patient_profile::handler(ctx, name, sex, dob)
     }
 }

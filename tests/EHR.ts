@@ -15,13 +15,13 @@ describe("EHR", () => {
     // Add your test here.
     const [patientEHRPDA, patientEHRBump] = await PublicKey.findProgramAddress(
       [
-        anchor.utils.bytes.utf8.encode("patient-ehr"),
+        anchor.utils.bytes.utf8.encode("patient-profile"),
         provider.wallet.publicKey.toBuffer()
       ],
       program.programId
     );
     
-    const tx = await program.methods.initPatientEhr("Bhargav","Male","23/11/1994")
+    const tx = await program.methods.initPatientProfile("Bhargav","Male","23/11/1994")
                                     .accounts({
                                       patient: provider.wallet.publicKey,
                                       patientEhrAccount: patientEHRPDA,
