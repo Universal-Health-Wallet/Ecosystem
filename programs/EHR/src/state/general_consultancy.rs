@@ -12,6 +12,7 @@ pub struct GeneralConsultancy{
     pub blood_sugar: u32,
     pub temperature: u32,
     pub doctor_comments: String,
+    pub gc_report_ipfs_hash: String,
     pub patient_verified: bool,
     pub general_consultancy_bump: u8,
     _reserved: [u8; 6],
@@ -23,6 +24,7 @@ const MAX_SIZE_IU32: usize = 4;
 const STRING_LENGTH_PREFIX: usize = 4;
 const MAX_DOC_COMMENTS_LENGTH: usize = 512;
 const MAX_PAT_COMMENTS_LENGTH: usize = 512;
+const MAX_IPFS_HASH: usize = 512;
 const MAX_BOOLSIZE: usize = 1;
 const BUMP_LENGTH: usize = 1;
 const GENERALCONSULTANCY_RESERVE_SIZE: usize = 6;
@@ -34,6 +36,8 @@ impl GeneralConsultancy{
                     + STRING_LENGTH_PREFIX + MAX_DOC_COMMENTS_LENGTH
                     + STRING_LENGTH_PREFIX + MAX_PAT_COMMENTS_LENGTH
                     + MAX_BOOLSIZE
+                    + MAX_SIZE_IU128
+                    + MAX_IPFS_HASH
                     + BUMP_LENGTH
                     + GENERALCONSULTANCY_RESERVE_SIZE;
 }

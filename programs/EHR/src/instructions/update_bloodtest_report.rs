@@ -15,12 +15,13 @@ pub struct UpdateBloodtestReport <'info>{
     pub technician: Signer<'info>,
 }
 
-pub fn handler(ctx: Context<UpdateBloodtestReport>, white_blood_cells: u128, red_blood_cells: u128, blood_platelets: u128, technician_comments: String ) -> Result<()>{
+pub fn handler(ctx: Context<UpdateBloodtestReport>, white_blood_cells: u128, red_blood_cells: u128, blood_platelets: u128, technician_comments: String, bloodtest_report_ipfs_hash: String ) -> Result<()>{
     let bloodtest_report = &mut ctx.accounts.bloodtest_report;
         bloodtest_report.red_blood_cells = red_blood_cells;
         bloodtest_report.white_blood_cells = white_blood_cells;
         bloodtest_report.blood_platelets = blood_platelets;
         bloodtest_report.technician_comments = technician_comments;
+        bloodtest_report.bloodtest_report_ipfs_hash = bloodtest_report_ipfs_hash;
         Ok(())
     
 }

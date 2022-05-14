@@ -29,7 +29,7 @@ pub fn handler(ctx: Context<InitTechnicianProfile>, technician_name: String, tec
     technician_profile.technician_bloodtest_expiry_time = technician_bloodtest_expiry_time;
     technician_profile.sign_up_date = clock.unix_timestamp;
     technician_profile.technician_licence = technician_licence;
-    technician_profile.technician_profile_bump = *ctx.bumps.get("technical_profile").unwrap();
+    technician_profile.technician_profile_bump = *ctx.bumps.get("technician_profile").unwrap();
 
     Ok(())
 }

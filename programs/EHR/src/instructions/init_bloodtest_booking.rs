@@ -47,6 +47,7 @@ impl<'info> From<&mut InitBloodtestBooking<'info>>
 pub fn handler(ctx: Context<InitBloodtestBooking>) -> Result<()>
 {
     const BLOODTEST_PDA_SEED: &[u8] = b"bloodtest-report";
+    const UHW_DAO_SHARE_BASISPOINTS: u16 = 50;
     let bloodtest_report = &mut ctx.accounts.bloodtest_report;
     let technician_profile = &ctx.accounts.technician_profile;
     let patient = &ctx.accounts.patient;
@@ -59,6 +60,7 @@ pub fn handler(ctx: Context<InitBloodtestBooking>) -> Result<()>
     bloodtest_report.technician_bloodtest_expiry_time = technician_profile.technician_bloodtest_expiry_time;
     bloodtest_report.patient_verified = false;
     bloodtest_report.bloodtest_report_bump = *ctx.bumps.get("bloodtest_report").unwrap();
+    bloodtest_report.uhw_dao_share = UHW_DAO_SHARE_BASISPOINTS;
     let (pda, _bump_seed) = Pubkey::find_program_address(&[BLOODTEST_PDA_SEED], ctx.program_id);
     token::set_authority(ctx.accounts.into(), AuthorityType::AccountOwner, Some(pda))?;
     Ok(())
