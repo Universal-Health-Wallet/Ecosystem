@@ -16,7 +16,7 @@ pub struct InitDoctorProfile <'info>{
     pub system_program: Program<'info, System>,
 }
 
-pub fn handler(ctx: Context<InitDoctorProfile>, doctor_name: String, doctor_sex: String, doctor_dob: String, doctor_experience_months: u32, doctor_gc_fee: u128, doctor_licence:bool, doctor_gc_expiry_time: i64 ) -> Result<()>{
+pub fn handler(ctx: Context<InitDoctorProfile>, doctor_name: String, doctor_sex: String, doctor_dob: String, doctor_experience_months: u32, doctor_gc_fee: u64, doctor_licence:bool, doctor_gc_expiry_time: i64 ) -> Result<()>{
     let doctor_profile = &mut ctx.accounts.doctor_profile;
     let doctor = &ctx.accounts.doctor;
     let clock: Clock = Clock::get().unwrap();

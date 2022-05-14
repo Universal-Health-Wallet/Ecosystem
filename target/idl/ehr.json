@@ -21,6 +21,11 @@
           "isSigner": false
         },
         {
+          "name": "patientDepositTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "uhwDaoWallet",
           "isMut": true,
           "isSigner": false
@@ -32,6 +37,11 @@
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -76,7 +86,7 @@
         },
         {
           "name": "doctorGcFee",
-          "type": "u128"
+          "type": "u64"
         },
         {
           "name": "doctorLicence",
@@ -201,7 +211,7 @@
         },
         {
           "name": "technicianBloodtestFee",
-          "type": "u128"
+          "type": "u64"
         },
         {
           "name": "technicianLicence",
@@ -303,9 +313,34 @@
           "isSigner": false
         },
         {
+          "name": "patientMainAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaPatientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "doctorReceiveTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patient",
           "isMut": false,
           "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
         }
       ],
       "args": []
@@ -347,8 +382,12 @@
             "type": "publicKey"
           },
           {
+            "name": "patientDepositTokenAccount",
+            "type": "publicKey"
+          },
+          {
             "name": "technicianBloodtestFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "patientBookingTime",
@@ -421,7 +460,7 @@
           },
           {
             "name": "doctorGcFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "doctorGcExpiryTime",
@@ -466,7 +505,7 @@
           },
           {
             "name": "doctorGcFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "bookingTime",
@@ -592,7 +631,7 @@
           },
           {
             "name": "technicianBloodtestFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "technicianBloodtestExpiryTime",

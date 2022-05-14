@@ -5,7 +5,8 @@ use anchor_lang::prelude::*;
 pub struct BloodtestReport{
     pub patient: Pubkey,
     pub technician: Pubkey,
-    pub technician_bloodtest_fee: u128,
+    pub patient_deposit_token_account: Pubkey,
+    pub technician_bloodtest_fee: u64,
     pub patient_booking_time: i64,
     pub technician_bloodtest_expiry_time: i64,
     pub red_blood_cells: u128,
@@ -28,8 +29,8 @@ const BLOODTESTREPORT_RESERVED_SIZE: usize = 6;
 
 impl BloodtestReport{
     pub const LEN: usize = 2 * MAX_PUBKEY_LENGTH
-                        + 4 * MAX_SIZE_IU128
-                        + 2 * MAX_SIZE_IU64
+                        + 3 * MAX_SIZE_IU128
+                        + 3 * MAX_SIZE_IU64
                         + STRING_LENGTH_PREFIX + MAX_TECH_COMMENTS_LENGTH
                         + MAX_BOOLSIZE
                         + BUMP_LENGTH

@@ -21,6 +21,11 @@ export type Ehr = {
           "isSigner": false
         },
         {
+          "name": "patientDepositTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "uhwDaoWallet",
           "isMut": true,
           "isSigner": false
@@ -32,6 +37,11 @@ export type Ehr = {
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -76,7 +86,7 @@ export type Ehr = {
         },
         {
           "name": "doctorGcFee",
-          "type": "u128"
+          "type": "u64"
         },
         {
           "name": "doctorLicence",
@@ -201,7 +211,7 @@ export type Ehr = {
         },
         {
           "name": "technicianBloodtestFee",
-          "type": "u128"
+          "type": "u64"
         },
         {
           "name": "technicianLicence",
@@ -303,9 +313,34 @@ export type Ehr = {
           "isSigner": false
         },
         {
+          "name": "patientMainAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaPatientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "doctorReceiveTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patient",
           "isMut": false,
           "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
         }
       ],
       "args": []
@@ -347,8 +382,12 @@ export type Ehr = {
             "type": "publicKey"
           },
           {
+            "name": "patientDepositTokenAccount",
+            "type": "publicKey"
+          },
+          {
             "name": "technicianBloodtestFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "patientBookingTime",
@@ -421,7 +460,7 @@ export type Ehr = {
           },
           {
             "name": "doctorGcFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "doctorGcExpiryTime",
@@ -466,7 +505,7 @@ export type Ehr = {
           },
           {
             "name": "doctorGcFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "bookingTime",
@@ -592,7 +631,7 @@ export type Ehr = {
           },
           {
             "name": "technicianBloodtestFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "technicianBloodtestExpiryTime",
@@ -670,6 +709,11 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
+          "name": "patientDepositTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
           "name": "uhwDaoWallet",
           "isMut": true,
           "isSigner": false
@@ -681,6 +725,11 @@ export const IDL: Ehr = {
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -725,7 +774,7 @@ export const IDL: Ehr = {
         },
         {
           "name": "doctorGcFee",
-          "type": "u128"
+          "type": "u64"
         },
         {
           "name": "doctorLicence",
@@ -850,7 +899,7 @@ export const IDL: Ehr = {
         },
         {
           "name": "technicianBloodtestFee",
-          "type": "u128"
+          "type": "u64"
         },
         {
           "name": "technicianLicence",
@@ -952,9 +1001,34 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
+          "name": "patientMainAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaPatientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "doctorReceiveTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patient",
           "isMut": false,
           "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
         }
       ],
       "args": []
@@ -996,8 +1070,12 @@ export const IDL: Ehr = {
             "type": "publicKey"
           },
           {
+            "name": "patientDepositTokenAccount",
+            "type": "publicKey"
+          },
+          {
             "name": "technicianBloodtestFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "patientBookingTime",
@@ -1070,7 +1148,7 @@ export const IDL: Ehr = {
           },
           {
             "name": "doctorGcFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "doctorGcExpiryTime",
@@ -1115,7 +1193,7 @@ export const IDL: Ehr = {
           },
           {
             "name": "doctorGcFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "bookingTime",
@@ -1241,7 +1319,7 @@ export const IDL: Ehr = {
           },
           {
             "name": "technicianBloodtestFee",
-            "type": "u128"
+            "type": "u64"
           },
           {
             "name": "technicianBloodtestExpiryTime",
