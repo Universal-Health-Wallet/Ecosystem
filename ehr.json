@@ -127,7 +127,17 @@
           "isSigner": false
         },
         {
-          "name": "uhwDaoWallet",
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -138,6 +148,16 @@
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -341,7 +361,7 @@
           "isSigner": false
         },
         {
-          "name": "doctorReceiveTokenAccount",
+          "name": "technicianReceiveTokenAccount",
           "isMut": false,
           "isSigner": false
         },
@@ -377,9 +397,34 @@
           "isSigner": false
         },
         {
+          "name": "patientMainAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaPatientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "doctorReceiveTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patient",
           "isMut": false,
           "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
         }
       ],
       "args": []
@@ -530,6 +575,10 @@
             "type": "publicKey"
           },
           {
+            "name": "patientDepositTokenAccount",
+            "type": "publicKey"
+          },
+          {
             "name": "doctorGcFee",
             "type": "u64"
           },
@@ -540,6 +589,10 @@
           {
             "name": "generalConsultancyExpiryTime",
             "type": "i64"
+          },
+          {
+            "name": "uhwDaoShare",
+            "type": "u16"
           },
           {
             "name": "patientComments",
@@ -717,6 +770,11 @@
       "code": 6004,
       "name": "PatientCommentsLong",
       "msg": "Patient Comments is more than 512 bytes"
+    },
+    {
+      "code": 6005,
+      "name": "MathOverflow",
+      "msg": "Math Overflow"
     }
   ],
   "metadata": {
