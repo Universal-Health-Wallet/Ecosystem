@@ -12,4 +12,6 @@ pub enum ErrorCode {
     SexTooLong,
     #[msg("Patient Comments is more than 512 bytes")]
     PatientCommentsLong,
+    #[msg("Math Overflow")]
+    MathOverflow,
 }

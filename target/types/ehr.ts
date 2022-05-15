@@ -717,6 +717,11 @@ export type Ehr = {
       "code": 6004,
       "name": "PatientCommentsLong",
       "msg": "Patient Comments is more than 512 bytes"
+    },
+    {
+      "code": 6005,
+      "name": "MathOverflow",
+      "msg": "Math Overflow"
     }
   ]
 };
@@ -1440,6 +1445,11 @@ export const IDL: Ehr = {
       "code": 6004,
       "name": "PatientCommentsLong",
       "msg": "Patient Comments is more than 512 bytes"
+    },
+    {
+      "code": 6005,
+      "name": "MathOverflow",
+      "msg": "Math Overflow"
     }
   ]
 };

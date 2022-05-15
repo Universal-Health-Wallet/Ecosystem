@@ -21,12 +21,17 @@
           "isSigner": false
         },
         {
-          "name": "patientDepositTokenAccount",
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAccount",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "uhwDaoWallet",
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -37,6 +42,11 @@
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
           "isMut": false,
           "isSigner": false
         },
@@ -702,9 +712,14 @@
       "code": 6003,
       "name": "SexTooLong",
       "msg": "Sex is more than 16 bytes"
+    },
+    {
+      "code": 6004,
+      "name": "PatientCommentsLong",
+      "msg": "Patient Comments is more than 512 bytes"
     }
   ],
   "metadata": {
-    "address": "3ajwFh1gw3din2vueAXQshpQRJ1VjD3DrWx72B7Ctm87"
+    "address": "9xPDpouXddtT4CpNxkevF7uqurqJmbu6EXnZ5SbueaAw"
   }
 }
