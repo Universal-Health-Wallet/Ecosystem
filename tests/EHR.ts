@@ -24,11 +24,11 @@ describe("EHR", () => {
     const tx = await program.methods.initPatientProfile("Bhargav","Male","23/11/1994")
                                     .accounts({
                                       patient: provider.wallet.publicKey,
-                                      patientEhrAccount: patientEHRPDA,
+                                      patientProfile: patientEHRPDA,
                                     }).rpc();
     console.log("Your transaction signature", tx);
-    expect((await program.account.patientEhr.fetch(patientEHRPDA)).name).to.equal("Bhargav");
-    const patientEhrAccounts = await program.account.patientEhr.all();
+    expect((await program.account.patientProfile.fetch(patientEHRPDA)).name).to.equal("Bhargav");
+    const patientEhrAccounts = await program.account.patientProfile.all();
     console.log("patientEhr");
     console.log(patientEhrAccounts);
     

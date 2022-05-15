@@ -10,4 +10,6 @@ pub enum ErrorCode {
     DOBTooLong,
     #[msg("Sex is more than 16 bytes")]
     SexTooLong,
+    #[msg("Patient Comments is more than 512 bytes")]
+    PatientCommentsLong,
 }

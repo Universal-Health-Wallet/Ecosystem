@@ -21,12 +21,17 @@ export type Ehr = {
           "isSigner": false
         },
         {
-          "name": "patientDepositTokenAccount",
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAccount",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "uhwDaoWallet",
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -37,6 +42,11 @@ export type Ehr = {
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
           "isMut": false,
           "isSigner": false
         },
@@ -702,6 +712,11 @@ export type Ehr = {
       "code": 6003,
       "name": "SexTooLong",
       "msg": "Sex is more than 16 bytes"
+    },
+    {
+      "code": 6004,
+      "name": "PatientCommentsLong",
+      "msg": "Patient Comments is more than 512 bytes"
     }
   ]
 };
@@ -729,12 +744,17 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
-          "name": "patientDepositTokenAccount",
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAccount",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "uhwDaoWallet",
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -745,6 +765,11 @@ export const IDL: Ehr = {
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
           "isMut": false,
           "isSigner": false
         },
@@ -1410,6 +1435,11 @@ export const IDL: Ehr = {
       "code": 6003,
       "name": "SexTooLong",
       "msg": "Sex is more than 16 bytes"
+    },
+    {
+      "code": 6004,
+      "name": "PatientCommentsLong",
+      "msg": "Patient Comments is more than 512 bytes"
     }
   ]
 };

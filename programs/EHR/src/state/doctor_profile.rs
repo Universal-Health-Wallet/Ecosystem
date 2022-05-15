@@ -22,7 +22,6 @@ const MAX_DOCTOR_SEX_LENGTH: usize = 16;
 const MAX_DOCTOR_DOB_LENGTH: usize = 16;
 const MAX_SIZE_IU32: usize = 4;
 const MAX_SIZE_IU64: usize = 8;
-const MAX_SIZE_IU128: usize = 16;
 const MAX_BOOLSIZE: usize = 1;
 const BUMP_LENGTH: usize = 1;
 const DOCTORPROFILE_RESERVED_SIZE: usize = 6;

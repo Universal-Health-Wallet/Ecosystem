@@ -32,14 +32,13 @@ const BUMP_LENGTH: usize = 1;
 const BLOODTESTREPORT_RESERVED_SIZE: usize = 4;
 
 impl BloodtestReport{
-    pub const LEN: usize = 2 * MAX_PUBKEY_LENGTH
-                        + 3 * MAX_SIZE_IU128
-                        + MAX_SIZE_IU16
+    pub const LEN: usize = 3 * MAX_PUBKEY_LENGTH
                         + 3 * MAX_SIZE_IU64
+                        + MAX_SIZE_IU16
+                        + 3 * MAX_SIZE_IU128
                         + STRING_LENGTH_PREFIX + MAX_TECH_COMMENTS_LENGTH
-                        + STRING_LENGTH_PREFIX + MAX_TECH_COMMENTS_LENGTH
+                        + STRING_LENGTH_PREFIX + MAX_IPFS_HASH
                         + MAX_BOOLSIZE
-                        + MAX_IPFS_HASH
                         + BUMP_LENGTH
                         + BLOODTESTREPORT_RESERVED_SIZE;
 }

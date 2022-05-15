@@ -18,7 +18,6 @@ pub struct GeneralConsultancy{
     _reserved: [u8; 6],
 }
 const MAX_PUBKEY_LENGTH: usize = 32;
-const MAX_SIZE_IU128: usize = 16;
 const MAX_SIZE_IU64: usize = 8;
 const MAX_SIZE_IU32: usize = 4;
 const STRING_LENGTH_PREFIX: usize = 4;
@@ -32,12 +31,11 @@ const GENERALCONSULTANCY_RESERVE_SIZE: usize = 6;
 impl GeneralConsultancy{
     pub const LEN: usize = 2 * MAX_PUBKEY_LENGTH
                     + 3 * MAX_SIZE_IU64
-                    + 2 * MAX_SIZE_IU32
-                    + STRING_LENGTH_PREFIX + MAX_DOC_COMMENTS_LENGTH
                     + STRING_LENGTH_PREFIX + MAX_PAT_COMMENTS_LENGTH
+                    + 3 * MAX_SIZE_IU32
+                    + STRING_LENGTH_PREFIX + MAX_DOC_COMMENTS_LENGTH
+                    + STRING_LENGTH_PREFIX + MAX_IPFS_HASH
                     + MAX_BOOLSIZE
-                    + MAX_SIZE_IU128
-                    + MAX_IPFS_HASH
                     + BUMP_LENGTH
                     + GENERALCONSULTANCY_RESERVE_SIZE;
 }

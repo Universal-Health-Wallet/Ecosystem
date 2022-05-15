@@ -28,7 +28,10 @@ pub fn handler(ctx: Context<InitGcBooking>, patient_comments: String) -> Result<
     let doctor_profile = &ctx.accounts.doctor_profile;
     let patient = &ctx.accounts.patient;
     let clock: Clock = Clock::get().unwrap();  
-
+    
+    if patient_comments.as_bytes().len() > 512 {
+        return Err(ErrorCode::PatientCommentsLong.into())
+    }
     general_consultancy.patient = patient.key();
     general_consultancy.doctor = doctor_profile.key();
     general_consultancy.doctor_gc_fee = doctor_profile.doctor_gc_fee;
@@ -36,6 +39,7 @@ pub fn handler(ctx: Context<InitGcBooking>, patient_comments: String) -> Result<
     general_consultancy.general_consultancy_expiry_time = doctor_profile.doctor_gc_expiry_time;
     general_consultancy.patient_comments = patient_comments;
     general_consultancy.patient_verified = false;
+    
     general_consultancy.general_consultancy_bump = *ctx.bumps.get("general_consultancy").unwrap();
     Ok(())
     

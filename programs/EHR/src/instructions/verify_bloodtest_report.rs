@@ -1,7 +1,6 @@
 use anchor_lang::prelude::*;
 use crate::state::*;
-use anchor_spl::token::{self, SetAuthority, Token, TokenAccount, Transfer};
-use spl_token::instruction::AuthorityType;
+use anchor_spl::token::{self, Token, TokenAccount, Transfer};
 
 
 #[derive(Accounts)]
@@ -29,17 +28,6 @@ pub struct VerifyBloodtestReport <'info>{
 }
 
 impl<'info> VerifyBloodtestReport<'info> {
-    fn into_set_authority_context(&self) -> CpiContext<'_, '_, '_, 'info, SetAuthority<'info>> {
-        let cpi_accounts = SetAuthority {
-            account_or_mint: self.pda_patient_token_account.to_account_info().clone(),
-            current_authority: self.pda_account.clone(),
-        };
-        let cpi_program = self.token_program.to_account_info();
-        CpiContext::new(cpi_program, cpi_accounts)
-    }
-}
-
-impl<'info> VerifyBloodtestReport<'info> {
     fn into_transfer_to_doctor_context(&self) -> CpiContext<'_, '_, '_, 'info, Transfer<'info>> {
         let cpi_accounts = Transfer {
             from: self.pda_patient_token_account.to_account_info().clone(),
@@ -55,9 +43,15 @@ pub fn handler(ctx: Context<VerifyBloodtestReport>) -> Result<()>{
     let bloodtest_report = &mut ctx.accounts.bloodtest_report;
     const BLOODTEST_PDA_SEED: &[u8] = b"bloodtest-report";
     bloodtest_report.patient_verified = true;
-    let (_pda, bump_seed) = Pubkey::find_program_address(&[BLOODTEST_PDA_SEED], ctx.program_id);
-    let seeds = &[&BLOODTEST_PDA_SEED[..], &[bump_seed]];
-    token::transfer(ctx.accounts.into_transfer_to_doctor_context().with_signer(&[&seeds[..]]),ctx.accounts.bloodtest_report.technician_bloodtest_fee,)?;
-    token::set_authority(ctx.accounts.into_set_authority_context().with_signer(&[&seeds[..]]),AuthorityType::AccountOwner,Some(ctx.accounts.bloodtest_report.patient),)?;    
-    Ok(())
+    let (_vault_authority, vault_authority_bump) =
+            Pubkey::find_program_address(&[BLOODTEST_PDA_SEED], ctx.program_id);
+        let authority_seeds = &[&BLOODTEST_PDA_SEED[..], &[vault_authority_bump]];
+        token::transfer(
+            ctx.accounts
+                .into_transfer_to_doctor_context()
+                .with_signer(&[&authority_seeds[..]]),
+            ctx.accounts.bloodtest_report.technician_bloodtest_fee,
+        )?;
+
+Ok(())
 }

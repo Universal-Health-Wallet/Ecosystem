@@ -20,6 +20,16 @@ pub fn handler(ctx: Context<InitTechnicianProfile>, technician_name: String, tec
     let technician_profile = &mut ctx.accounts.technician_profile;
     let technician = &ctx.accounts.technician;
     let clock: Clock = Clock::get().unwrap();
+    if technician_name.as_bytes().len() > 128 {
+        return Err(ErrorCode::NameTooLong.into())
+    }
+    if technician_sex.as_bytes().len() > 16 {
+        return Err(ErrorCode::SexTooLong.into())
+    }
+    if technician_dob.as_bytes().len() > 16 {
+        return Err(ErrorCode::DOBTooLong.into())
+    }
+    
     technician_profile.technician = technician.key();
     technician_profile.technician_name = technician_name;
     technician_profile.technician_sex = technician_sex;
