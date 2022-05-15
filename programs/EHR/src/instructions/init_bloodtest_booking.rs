@@ -28,7 +28,7 @@ pub struct InitBloodtestBooking <'info>{
     )]
     pub vault_account: Account<'info, TokenAccount>,
     #[account(mut,
-        constraint = patient_deposit_token_account.amount >= bloodtest_report.technician_bloodtest_fee
+        constraint = patient_deposit_token_account.amount >= technician_profile.technician_bloodtest_fee
     )]
     pub patient_deposit_token_account: Account<'info, TokenAccount>,
     #[account(mut)]

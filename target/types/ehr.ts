@@ -127,7 +127,17 @@ export type Ehr = {
           "isSigner": false
         },
         {
-          "name": "uhwDaoWallet",
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -138,6 +148,16 @@ export type Ehr = {
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -341,7 +361,7 @@ export type Ehr = {
           "isSigner": false
         },
         {
-          "name": "doctorReceiveTokenAccount",
+          "name": "technicianReceiveTokenAccount",
           "isMut": false,
           "isSigner": false
         },
@@ -377,9 +397,34 @@ export type Ehr = {
           "isSigner": false
         },
         {
+          "name": "patientMainAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaPatientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "doctorReceiveTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patient",
           "isMut": false,
           "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
         }
       ],
       "args": []
@@ -530,6 +575,10 @@ export type Ehr = {
             "type": "publicKey"
           },
           {
+            "name": "patientDepositTokenAccount",
+            "type": "publicKey"
+          },
+          {
             "name": "doctorGcFee",
             "type": "u64"
           },
@@ -540,6 +589,10 @@ export type Ehr = {
           {
             "name": "generalConsultancyExpiryTime",
             "type": "i64"
+          },
+          {
+            "name": "uhwDaoShare",
+            "type": "u16"
           },
           {
             "name": "patientComments",
@@ -855,7 +908,17 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
-          "name": "uhwDaoWallet",
+          "name": "mint",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
@@ -866,6 +929,16 @@ export const IDL: Ehr = {
         },
         {
           "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "rent",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
           "isMut": false,
           "isSigner": false
         }
@@ -1069,7 +1142,7 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
-          "name": "doctorReceiveTokenAccount",
+          "name": "technicianReceiveTokenAccount",
           "isMut": false,
           "isSigner": false
         },
@@ -1105,9 +1178,34 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
+          "name": "patientMainAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "pdaPatientTokenAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "doctorReceiveTokenAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "pdaAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patient",
           "isMut": false,
           "isSigner": true
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
         }
       ],
       "args": []
@@ -1258,6 +1356,10 @@ export const IDL: Ehr = {
             "type": "publicKey"
           },
           {
+            "name": "patientDepositTokenAccount",
+            "type": "publicKey"
+          },
+          {
             "name": "doctorGcFee",
             "type": "u64"
           },
@@ -1268,6 +1370,10 @@ export const IDL: Ehr = {
           {
             "name": "generalConsultancyExpiryTime",
             "type": "i64"
+          },
+          {
+            "name": "uhwDaoShare",
+            "type": "u16"
           },
           {
             "name": "patientComments",
