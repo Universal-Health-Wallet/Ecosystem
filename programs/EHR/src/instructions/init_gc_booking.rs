@@ -64,7 +64,7 @@ impl<'info> InitGcBooking<'info> {
 
 pub fn handler(ctx: Context<InitGcBooking>, patient_comments: String) -> Result<()>{
     const GC_PDA_SEED: &[u8] = b"general-consultancy";
-    const UHW_DAO_SHARE_BASISPOINTS: u16 = 50;
+    const UHW_DAO_SHARE_BASISPOINTS: u64 = 5;
     let general_consultancy = &mut ctx.accounts.general_consultancy;
     let doctor_profile = &ctx.accounts.doctor_profile;
     let patient = &ctx.accounts.patient;

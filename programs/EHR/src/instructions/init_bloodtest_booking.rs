@@ -59,7 +59,7 @@ impl<'info> InitBloodtestBooking<'info> {
 }
 pub fn handler(ctx: Context<InitBloodtestBooking>) -> Result<()> {
     const BLOODTEST_PDA_SEED: &[u8] = b"bloodtest-report";
-    const UHW_DAO_SHARE_BASISPOINTS: u16 = 50;
+    const UHW_DAO_SHARE_BASISPOINTS: u64 = 5;
     let bloodtest_report = &mut ctx.accounts.bloodtest_report;
     let technician_profile = &ctx.accounts.technician_profile;
     let patient = &ctx.accounts.patient;

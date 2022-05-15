@@ -8,7 +8,7 @@ pub struct GeneralConsultancy{
     pub doctor_gc_fee: u64,
     pub booking_time: i64,
     pub general_consultancy_expiry_time: i64,
-    pub uhw_dao_share: u16,
+    pub uhw_dao_share: u64,
     pub patient_comments: String,
     pub blood_pressure: u32,
     pub blood_sugar: u32,
@@ -21,7 +21,6 @@ pub struct GeneralConsultancy{
 }
 const MAX_PUBKEY_LENGTH: usize = 32;
 const MAX_SIZE_IU64: usize = 8;
-const MAX_SIZE_IU16: usize = 2;
 const STRING_LENGTH_PREFIX: usize = 4;
 const MAX_PAT_COMMENTS_LENGTH: usize = 512;
 const MAX_SIZE_IU32: usize = 4;
@@ -33,8 +32,7 @@ const GENERALCONSULTANCY_RESERVE_SIZE: usize = 6;
 
 impl GeneralConsultancy{
     pub const LEN: usize = 3 * MAX_PUBKEY_LENGTH
-                    + 3 * MAX_SIZE_IU64
-                    + MAX_SIZE_IU16
+                    + 4 * MAX_SIZE_IU64
                     + STRING_LENGTH_PREFIX + MAX_PAT_COMMENTS_LENGTH
                     + 3 * MAX_SIZE_IU32
                     + STRING_LENGTH_PREFIX + MAX_DOC_COMMENTS_LENGTH

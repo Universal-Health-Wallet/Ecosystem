@@ -346,28 +346,33 @@ export type Ehr = {
           "isSigner": false
         },
         {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patientProfile",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "patientMainAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "pdaPatientTokenAccount",
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
         {
           "name": "technicianReceiveTokenAccount",
-          "isMut": false,
+          "isMut": true,
           "isSigner": false
         },
         {
-          "name": "pdaAccount",
-          "isMut": false,
+          "name": "daoTokenAccount",
+          "isMut": true,
           "isSigner": false
         },
         {
@@ -392,28 +397,33 @@ export type Ehr = {
           "isSigner": false
         },
         {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patientProfile",
           "isMut": false,
           "isSigner": false
         },
         {
-          "name": "patientMainAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "pdaPatientTokenAccount",
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
         {
           "name": "doctorReceiveTokenAccount",
-          "isMut": false,
+          "isMut": true,
           "isSigner": false
         },
         {
-          "name": "pdaAccount",
-          "isMut": false,
+          "name": "daoTokenAccount",
+          "isMut": true,
           "isSigner": false
         },
         {
@@ -462,7 +472,7 @@ export type Ehr = {
           },
           {
             "name": "uhwDaoShare",
-            "type": "u16"
+            "type": "u64"
           },
           {
             "name": "redBloodCells",
@@ -592,7 +602,7 @@ export type Ehr = {
           },
           {
             "name": "uhwDaoShare",
-            "type": "u16"
+            "type": "u64"
           },
           {
             "name": "patientComments",
@@ -1127,28 +1137,33 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patientProfile",
           "isMut": true,
           "isSigner": false
         },
         {
-          "name": "patientMainAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "pdaPatientTokenAccount",
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
         {
           "name": "technicianReceiveTokenAccount",
-          "isMut": false,
+          "isMut": true,
           "isSigner": false
         },
         {
-          "name": "pdaAccount",
-          "isMut": false,
+          "name": "daoTokenAccount",
+          "isMut": true,
           "isSigner": false
         },
         {
@@ -1173,28 +1188,33 @@ export const IDL: Ehr = {
           "isSigner": false
         },
         {
+          "name": "vaultAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "vaultAuthority",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
           "name": "patientProfile",
           "isMut": false,
           "isSigner": false
         },
         {
-          "name": "patientMainAccount",
-          "isMut": true,
-          "isSigner": false
-        },
-        {
-          "name": "pdaPatientTokenAccount",
+          "name": "patientDepositTokenAccount",
           "isMut": true,
           "isSigner": false
         },
         {
           "name": "doctorReceiveTokenAccount",
-          "isMut": false,
+          "isMut": true,
           "isSigner": false
         },
         {
-          "name": "pdaAccount",
-          "isMut": false,
+          "name": "daoTokenAccount",
+          "isMut": true,
           "isSigner": false
         },
         {
@@ -1243,7 +1263,7 @@ export const IDL: Ehr = {
           },
           {
             "name": "uhwDaoShare",
-            "type": "u16"
+            "type": "u64"
           },
           {
             "name": "redBloodCells",
@@ -1373,7 +1393,7 @@ export const IDL: Ehr = {
           },
           {
             "name": "uhwDaoShare",
-            "type": "u16"
+            "type": "u64"
           },
           {
             "name": "patientComments",
